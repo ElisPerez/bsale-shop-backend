@@ -28,3 +28,7 @@ npm run dev
 ```
 
 - Resultados de las pruebas de los Endpoints [https://documenter.getpostman.com/view/19510285/2s847BUbW4](https://documenter.getpostman.com/view/19510285/2s847BUbW4)
+
+- Repositorio en GitHub: [https://github.com/ElisPerez/bsale-shop-backend](https://github.com/ElisPerez/bsale-shop-backend)
+
+# Visitar: [https://bsale-shop-backend-elis.herokuapp.com](https://bsale-shop-backend-elis.herokuapp.com)
