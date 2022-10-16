@@ -1,0 +1,23 @@
+{
+  "name": "back-bsale-shop",
+  "version": "1.0.0",
+  "description": "Back-End Bsale Shop Elis Antonio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": {
+    "name": "Elis Antonio Perez",
+    "email": "elisperezmusic@gmail.com",
+    "url": "https://www.instagram.com/elisperezmusic"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "mysql": "^2.18.1"
+  }
+}
