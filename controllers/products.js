@@ -1,5 +1,5 @@
 const { request, response } = require('express');
-const { dbConnection } = require('../mysql/dbConnection');
+const { dbConnection } = require('../db/dbConnection');
 
 const getProducts = (req = request, res = response) => {
   try {
