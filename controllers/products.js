@@ -1,50 +1,37 @@
 const { request, response } = require('express');
-const { dbConnection } = require('../db/dbConnection');
+const productModel = require('../models/product');
 
 const getProducts = (req = request, res = response) => {
-  try {
-    dbConnection.query('SELECT * FROM product', function (error, products, fields) {
-      if (error) throw error;
-
-      res.json(products);
-    });
-  } catch (error) {
-    console.log('An error here', error);
-  }
+  productModel.getProducts(function (error, products) {
+    if (error) {
+      res.status(404).json({ message: 'Error en la consulta', error });
+    } else {
+      res.status(200).json(products);
+    }
+  });
 };
 
 const getProductsByCategory = (req = request, res = response) => {
   const { id } = req.query;
-  try {
-    dbConnection.query(
-      `SELECT * FROM product WHERE category = ${id}`,
-      function (error, products, fields) {
-        if (error) throw error;
 
-        res.json(products);
-      }
-    );
-  } catch (error) {
-    console.log('An error here', error);
-  }
+  productModel.getProductsByCategoryId(id, function (error, products) {
+    if (error) {
+      res.status(404).json({ message: 'Error en la consulta', error });
+    } else {
+      res.status(200).json(products);
+    }
+  });
 };
 
 const getProductsByName = (req = request, res = response) => {
   const { q } = req.query;
-  try {
-    dbConnection.query(
-      `SELECT * FROM product WHERE name LIKE "%${q}%"`,
-      function (error, products, fields) {
-        if (error) {
-          res.json((products = []));
-        }
-
-        res.json(products);
-      }
-    );
-  } catch (error) {
-    console.log('An error here', error);
-  }
+  productModel.getProductsByName(q, function (error, products) {
+    if (error) {
+      res.status(404).json({ message: 'Error en la consulta', error });
+    } else {
+      res.status(200).json(products);
+    }
+  });
 };
 
 module.exports = {
@@ -52,4 +39,3 @@ module.exports = {
   getProductsByCategory,
   getProductsByName,
 };
-
