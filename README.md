@@ -43,7 +43,8 @@ npm run dev
 
 # Feedback
 
-- Se creó nueva rama `FEEDBACK` para probar los nuevos cambios para luego unir a la rama `MAIN`.
+- Se creó nueva rama `FEEDBACK` para agregar/probar los nuevos cambios.
 - Se crearon los modelos para completar el MVC.
 - Se agregó diccionario en un nuevo Mackdown.
 - Se agregó documentación en cada pieza de código.
+- Se unieron los cambios a la rama `MAIN`.
