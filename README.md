@@ -27,8 +27,23 @@ npm i
 npm run dev
 ```
 
+# Postman
+
 - Resultados de las pruebas de los Endpoints [https://documenter.getpostman.com/view/19510285/2s847BUbW4](https://documenter.getpostman.com/view/19510285/2s847BUbW4)
+
+## GitHub
 
 - Repositorio en GitHub: [https://github.com/ElisPerez/bsale-shop-backend](https://github.com/ElisPerez/bsale-shop-backend)
 
-# Visitar: [https://bsale-shop-backend-elis.herokuapp.com](https://bsale-shop-backend-elis.herokuapp.com)
+# Heroku:
+
+- Link: [https://bsale-shop-backend-elis.herokuapp.com](https://bsale-shop-backend-elis.herokuapp.com)
+
+# Gracias por pasarme a esta segunda etapa. 🤩
+
+# Feedback
+
+- Se creó nueva rama `FEEDBACK` para probar los nuevos cambios para luego unir a la rama `MAIN`.
+- Se crearon los modelos para completar el MVC.
+- Se agregó diccionario en un nuevo Mackdown.
+- Se agregó documentación en cada pieza de código.

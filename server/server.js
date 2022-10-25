@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
+/* It's a class that creates an Express server and sets up the middlewares and routes */
 class Server {
   constructor() {
     this.app = express();

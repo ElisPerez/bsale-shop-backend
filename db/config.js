@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 
+/* Creating a connection pool to the database. */
 const dbConnection = mysql.createPool({
   connectionLimit: 1000,
   connectTimeout: 60 * 60 * 1000,
