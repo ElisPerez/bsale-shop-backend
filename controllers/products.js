@@ -10,11 +10,26 @@ const getProductsPagination = (req = request, res = response) => {
     pageSize = 4;
   }
 
-  productModel.getProductsPagination(pageSize, pageNumber, function (error, totalRows, products) {
+  pageSize * 1 <= 0 && (pageSize = 4);
+  pageNumber * 1 <= 0 && (pageNumber = 1);
+
+  const baseUrl = 'https://bsale-shop-backend-elis.herokuapp.com/api/products';
+  let next = `${baseUrl}?pageSize=${pageSize}&pageNumber=${pageNumber * 1 + 1}`;
+  let previous = `${baseUrl}?pageSize=${pageSize}&pageNumber=${pageNumber * 1 - 1}`;
+
+  productModel.getProductsPagination(pageSize, pageNumber, function (error, count, products) {
+    const numPages = Math.ceil(count / (pageSize * 1));
+
+    pageNumber < 2 && (previous = null);
+
+    pageNumber >= numPages && (next = null);
+
+    pageNumber > numPages && (previous = `${baseUrl}?pageSize=${pageSize}&pageNumber=${numPages}`);
+
     if (error) {
       res.status(404).json({ message: 'Error en la consulta', error });
     } else {
-      res.status(200).json({ totalRows, products });
+      res.status(200).json({ count, next, previous, products });
     }
   });
 };

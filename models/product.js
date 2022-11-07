@@ -14,7 +14,7 @@ productModel.getProductsPagination = function (pageSize, pageNumber, callback) {
       callback(err, null);
     } else {
       // console.log(rows); // [ RowDataPacket { numRows: 57 } ]
-      const totalRows = rows[0].numRows;
+      const count = rows[0].numRows;
 
       /* Query products */
       dbConnection.query(`SELECT * FROM product LIMIT ${limit}`, function (err, products, fields) {
@@ -23,7 +23,7 @@ productModel.getProductsPagination = function (pageSize, pageNumber, callback) {
           callback(err, null);
         } else {
           // console.log(products);
-          callback(null, totalRows, products);
+          callback(null, count, products);
         }
       });
     }
