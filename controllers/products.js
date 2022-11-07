@@ -2,7 +2,7 @@ const { request, response } = require('express');
 const productModel = require('../models/product');
 
 const getProductsPagination = (req = request, res = response) => {
-  console.log(req.query);
+  // console.log(req.query);
   let { pageSize, pageNumber } = req.query;
 
   if (isNaN(pageSize) || isNaN(pageNumber)) {
@@ -20,7 +20,7 @@ const getProductsPagination = (req = request, res = response) => {
 };
 
 const getProductsByCategoryPagination = (req = request, res = response) => {
-  console.log(req.query);
+  // console.log(req.query);
   let { id, pageSize, pageNumber } = req.query;
 
   if (isNaN(pageSize) || isNaN(pageNumber)) {
@@ -43,8 +43,8 @@ const getProductsByCategoryPagination = (req = request, res = response) => {
 };
 
 const getProductsByNamePagination = (req = request, res = response) => {
+  // console.log(req.query);
   let { q, pageSize, pageNumber } = req.query;
-  console.log(req.query);
 
   if (isNaN(pageSize) || isNaN(pageNumber)) {
     pageNumber = 1;
@@ -52,7 +52,7 @@ const getProductsByNamePagination = (req = request, res = response) => {
   }
 
   productModel.getProductsByNamePagination(
-    q,
+    q, // Search term
     pageSize,
     pageNumber,
     function (error, totalRows, products) {
